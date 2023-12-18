@@ -22,7 +22,7 @@ $URL_PATH_explode_filter= array_filter($URL_PATH_explode);
 //  echo pathinfo($currentpage, PATHINFO_FILENAME);
 
   if($currentpage == $homeurl_index || $currentpage == $homepage_dash || $currentpage == $homeurl_index2 ) {
-     require_once(ABSPATH.'/home.php');
+     require_once(ABSPATH.'/home.html');
      die();
   }
   
@@ -35,10 +35,10 @@ $URL_PATH_explode_filter= array_filter($URL_PATH_explode);
 switch ($URL_PATH_explode_filter[1]) {
     
         case 'blog':
-            include_once(ABSPATH."/blog.php");
+            include_once(ABSPATH."/blog.html");
             break;
         case 'contact':
-            include_once(ABSPATH."/contact.php");
+            include_once(ABSPATH."/contact.html");
             break;
 
         default:
