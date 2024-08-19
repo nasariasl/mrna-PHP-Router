@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 //=== url parse
 //  var_dump(parse_url($full_url));
@@ -15,14 +15,13 @@ $URL_PATH_explode = explode('/', $URL_PATH);
 $URL_PATH_explode_filter= array_filter($URL_PATH_explode);
 //===  Home
 
-  $homeurl_index = '/index.php';                               
-  $homeurl_index2 = '/index.html';                               
+  $homeurl_index = '/index.php';
   $homepage_dash = "/";
   $currentpage = $_SERVER['REQUEST_URI'];
 //  echo pathinfo($currentpage, PATHINFO_FILENAME);
 
-  if($currentpage == $homeurl_index || $currentpage == $homepage_dash || $currentpage == $homeurl_index2 ) {
-     require_once(ABSPATH.'/home.html');
+  if($currentpage == $homeurl_index || $currentpage == $homepage_dash ) {
+     require_once(ABSPATH.'/public/home.html');
      die();
   }
   
@@ -35,15 +34,15 @@ $URL_PATH_explode_filter= array_filter($URL_PATH_explode);
 switch ($URL_PATH_explode_filter[1]) {
     
         case 'blog':
-            include_once(ABSPATH."/blog.html");
+            include_once(ABSPATH."/public/blog.html");
             break;
         case 'contact':
-            include_once(ABSPATH."/contact.html");
+            include_once(ABSPATH."/public/contact.html");
             break;
 
         default:
             header("HTTP/1.0 404 Not Found");
-            include_once("404.html");
+            include_once("/public/404.html");
             exit();
             
 }
